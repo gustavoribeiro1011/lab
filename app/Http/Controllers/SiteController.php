@@ -69,7 +69,7 @@ class SiteController extends Controller
             ],
         ];
 
-        return view('servico', [
+        return view('site.servico', [
            'servico' => $servicos[$id]
         ]);
     }
