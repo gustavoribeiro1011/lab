@@ -10,7 +10,7 @@
 <body>
     <h1>Domínio: {{$dominio}}</h1>
 
-    @if ($status ==== "ativo")
+    @if ($status === "ativo")
     <p>O domínio está ativo.</p>
     @else
     <p>O domínio está inativo.</p>
