@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dominios;
 use App\Http\Controllers\Saudacao;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
