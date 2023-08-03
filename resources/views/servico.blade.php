@@ -9,7 +9,7 @@
 
 <body>
 
-    <h1>{{ $serviço['nome'] }}</h1>
+    <h1>{{ $servico['nome'] }}</h1>
     <p>{{ $servico['descricao'] }}</p>
 
 </body>
