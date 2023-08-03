@@ -12,9 +12,9 @@ class Dominios extends Controller
  * @param Request $request
  * @return void
  */
-    public function __invoke(Request $request)
+    public function __invoke(string $dominio)
     {
-        echo "Eu sou o controlador de domínio";
+        echo "Você acessou o domínio $dominio";
         //Chamar a view
     }
 }
