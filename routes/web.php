@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DominioController;
 use App\Http\Controllers\Dominios;
 use App\Http\Controllers\Saudacao;
 use App\Http\Controllers\SiteController;
@@ -26,4 +27,4 @@ Route::get('/contato', [SiteController::class, 'contato']);
 Route::get('/servicos', [SiteController::class, 'servicos']);
 Route::get('/servico/{id}', [SiteController::class, 'servico']);
 Route::get('/saudacao/{nome?}', Saudacao::class);
-Route::get('/dominios/{dominio?}', Dominios::class);
+Route::get('/dominios/{dominio}',[DominioController::class, 'verificarDominio']);
