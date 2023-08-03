@@ -69,8 +69,8 @@ class SiteController extends Controller
             ],
         ];
 
-        echo $servicos[$id]['nome'];
-        echo "<br>";
-        echo $servicos[$id]['descricao'];
+        return view('servico', [
+           'servico' => $servicos[$id]
+        ]);
     }
 }
