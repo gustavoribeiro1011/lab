@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$dominio</title>
+    <title>{{$dominio}}</title>
 </head>
-<body>
-    Você está na <b>view</b> de <b>dominio</b>
 
-    O domínio $dominio está $status
+<body>
+    <h1>Domínio: {{$dominio}}</h1>
+
+    @if ($status ==== "ativo")
+    <p>O domínio está ativo.</p>
+    @else
+    <p>O domínio está inativo.</p>
+    @endif
+
 </body>
+
 </html>
