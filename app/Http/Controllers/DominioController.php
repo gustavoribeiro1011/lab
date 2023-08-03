@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class DominioController extends Controller
 {
-    public function verificarDominio(string $dominio)
+    public function verificarDominio(string $dominio = "")
     {
 
         $listaDeDominios = [
