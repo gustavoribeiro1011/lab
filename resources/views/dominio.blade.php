@@ -8,13 +8,20 @@
 </head>
 
 <body>
+    @if ($dominio !=== null)
     <p>Domínio: {{$dominio}}</p>
 
-    @if ($status === "ativo")
-    <p>O domínio está ativo.</p>
+       @if ($status === "ativo")
+       <p>O domínio está ativo.</p>
+       @else
+       <p>O domínio está inativo.</p>
+       @endif
+
     @else
-    <p>O domínio está inativo.</p>
+    <p>Domínio não encontrado</p>
     @endif
+
+
 
 </body>
 
