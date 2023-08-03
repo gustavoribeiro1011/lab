@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Domínio: {{$dominio}}</h1>
+    <p>Domínio: {{$dominio}}</p>
 
     @if ($status === "ativo")
     <p>O domínio está ativo.</p>
