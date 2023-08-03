@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    @if ($dominio !== null)
+    @if ($dominio !== "")
     <p>Domínio: {{$dominio}}</p>
 
        @if ($status === "ativo")
