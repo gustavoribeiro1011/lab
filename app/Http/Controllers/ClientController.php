@@ -9,18 +9,27 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $clients = Client::get();
-       return view('clients.index', [
-        'clients' => $clients
-       ]);
+        return view('clients.index', [
+            'clients' => $clients
+        ]);
     }
 
-    public function show(int $id){
+    public function show(int $id)
+    {
         $client = Client::find($id);
 
-       return view('clients.show',[
-        'client' => $client
-       ]);
+        return view('clients.show', [
+            'client' => $client
+        ]);
+    }
+
+    public function create(int $id)
+    {
+        $client = Client::find($id);
+
+        return view('clients.create');
     }
 }
