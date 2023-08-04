@@ -1,37 +1,19 @@
-<!doctype html>
-<html lang="en">
+@extends('app')
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Detalhes do cliente</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
+@section('titulo','Detalhes do Cliente')
 
-<body>
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Lab</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        Detalhes do Cliente {{ $client->nome }}
-      </div>
-      <div class="card-body">
-        <p><strong>ID: </strong> {{ $client->id }}</p>
-        <p><strong>Nome: </strong> {{ $client->nome }}</p>
-        <p><strong>Endereço: </strong> {{ $client->endereco }}</p>
-        <p><strong>Observação: </strong> {{ $client->observacao }}</p>
-        <br>
-        <a href="{{ route('clients.index') }}" class="btn btn-success">Voltar para lista</a>
-      </div>
-    </div>
+@section('conteudo')
+<div class="card">
+  <div class="card-header">
+    Detalhes do Cliente {{ $client->nome }}
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
-
-</html>
+  <div class="card-body">
+    <p><strong>ID: </strong> {{ $client->id }}</p>
+    <p><strong>Nome: </strong> {{ $client->nome }}</p>
+    <p><strong>Endereço: </strong> {{ $client->endereco }}</p>
+    <p><strong>Observação: </strong> {{ $client->observacao }}</p>
+    <br>
+    <a href="{{ route('clients.index') }}" class="btn btn-success">Voltar para lista</a>
+  </div>
+</div>
+@endsection
