@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Lab</a>
+            <a class="navbar-brand" href="{{ route('index') }}">Lab</a>
         </div>
     </nav>
     <div class="container">
