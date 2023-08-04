@@ -20,7 +20,13 @@
       <th scope="row">{{ $client->id }}</th>
       <td><a href="{{ route('clients.show', $client) }}">{{ $client->nome }}</a></td>
       <td>{{ $client->endereco }}</td>
-      <td><a class="btn btn-primary" href="{{ route('clients.edit', $client) }}">Atualizar</a></td>
+      <td><a class="btn btn-primary" href="{{ route('clients.edit', $client) }}">Atualizar</a>
+        <form action="{{ route('clients.destroy', $client) }}" method="POST" style="display:inline">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-danger">Apagar</button>
+        </form>
+      </td>
     </tr>
     @endforeach
   </tbody>
