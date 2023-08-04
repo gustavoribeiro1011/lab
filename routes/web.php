@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DominioController;
 use App\Http\Controllers\Saudacao;
 use App\Http\Controllers\SiteController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +29,6 @@ Route::get('/servicos', [SiteController::class, 'servicos']);
 Route::get('/servico/{id}', [SiteController::class, 'servico']);
 Route::get('/saudacao/{nome?}', Saudacao::class);
 Route::get('/dominios/{dominio?}', [DominioController::class, 'verificarDominio']);
+
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
