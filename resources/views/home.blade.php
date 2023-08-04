@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Olá, eu sou a página home.
-</body>
-</html>
+@extends('app')
+
+@section('titulo', 'Home')
+
+@section('conteudo')
+Olá, eu sou a página home.
+@endsection
