@@ -26,8 +26,15 @@ class ClientController extends Controller
         ]);
     }
 
-    public function create()    {        
+    public function create()
+    {
 
         return view('clients.create');
+    }
+
+    public function store(){
+
+        return dd("estou aqui");
+
     }
 }
