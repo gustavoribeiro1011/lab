@@ -32,9 +32,9 @@ class ClientController extends Controller
         return view('clients.create');
     }
 
-    public function store(){
+    public function store(Request $request){
 
-        return dd("estou aqui");
+       dd($request->all);
 
     }
 }
