@@ -6,7 +6,7 @@
 
 <h1>Editar Cliente</h1>
 
-<form action="{{ route('clients.edit') }}" method="POST">
+<form action="{{ route('clients.update', $client) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="mb-3">
