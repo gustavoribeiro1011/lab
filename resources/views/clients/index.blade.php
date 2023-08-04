@@ -24,7 +24,7 @@
         <form action="{{ route('clients.destroy', $client) }}" method="POST" style="display:inline">
           @method('DELETE')
           @csrf
-          <button type="submit" class="btn btn-danger">Apagar</button>
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
         </form>
       </td>
     </tr>
