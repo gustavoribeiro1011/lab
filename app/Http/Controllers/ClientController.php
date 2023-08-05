@@ -4,12 +4,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ClientController extends Controller
 {
-    public function index()
+    /**
+     * Lista os clientes
+     *
+     * @return View
+     */
+    public function index(): View
     {
         $clients = Client::get();
         return view('clients.index', [
@@ -17,7 +23,13 @@ class ClientController extends Controller
         ]);
     }
 
-    public function show(int $id)
+    /**
+     * Mostra um cliente específico
+     *
+     * @param integer $id
+     * @return View
+     */
+    public function show(int $id): View
     {
         $client = Client::find($id);
 
@@ -26,12 +38,23 @@ class ClientController extends Controller
         ]);
     }
 
-    public function create()
+    /**
+     * Exibi o formulário de criação
+     *
+     * @return View
+     */
+    public function create(): View
     {
 
         return view('clients.create');
     }
 
+    /**
+     * Cria um cliente no banco de dados
+     *
+     * @param Request $request
+     * @return void
+     */
     public function store(Request $request)
     {
 
@@ -42,7 +65,13 @@ class ClientController extends Controller
         return redirect('/clients');
     }
 
-    public function edit(int $id)
+    /**
+     * Mostra o formulário para edição
+     *
+     * @param integer $id
+     * @return View
+     */
+    public function edit(int $id): View
     {
         $client = Client::find($id);
 
@@ -51,7 +80,14 @@ class ClientController extends Controller
         ]);
     }
 
-    public function update(int $id, Request $request)
+    /**
+     * Atualiza o cliente no banco de dados
+     *
+     * @param integer $id
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function update(int $id, Request $request): RedirectResponse
     {
         $client = Client::find($id);
 
@@ -64,7 +100,13 @@ class ClientController extends Controller
         return redirect('/clients');
     }
 
-    public function destroy(int $id)
+    /**
+     * Apaga um cliente no banco de dados
+     *
+     * @param integer $id
+     * @return RedirectResponse
+     */
+    public function destroy(int $id): RedirectResponse
     {
         $client = Client::find($id);
 
