@@ -8,22 +8,21 @@ class SiteHerancaController extends Controller
 {
     public function home()
     {
-        // return view('site.heranca.home');
-        echo "aqui";
+        return view('site.heranca.home');        
     }
 
-    // public function portifolio()
-    // {
-    //     return view('heranca.portifolio');
-    // }
+    public function portifolio()
+    {
+        return view('heranca.portifolio');
+    }
 
-    // public function sobre()
-    // {
-    //     return view('heranca.sobre');
-    // }
+    public function sobre()
+    {
+        return view('heranca.sobre');
+    }
 
-    // public function contato()
-    // {
-    //     return view('heranca.contato');
-    // }
+    public function contato()
+    {
+        return view('heranca.contato');
+    }
 }
