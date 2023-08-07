@@ -93,7 +93,7 @@
                 @endforelse
 
  
-                @include('site.parciais._paginacao', ['first' => '<<'],'last' => '>>')
+                @include('site.parciais._paginacao', ['first' => '<<','last' => '>>'])
 
 
             </div>
