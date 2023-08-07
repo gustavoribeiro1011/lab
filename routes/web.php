@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\Aniversario;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\DominioController;
-use App\Http\Controllers\Saudacao;
-use App\Http\Controllers\SiteController;
+
+use App\Http\Controllers\CalcularIdade;
 
 use Illuminate\Support\Facades\Route;
 
