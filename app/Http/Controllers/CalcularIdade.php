@@ -8,6 +8,6 @@ class CalcularIdade extends Controller
 {
     public function index()
     {
-        return "teste";
+        echo "teste";
     }
 }
