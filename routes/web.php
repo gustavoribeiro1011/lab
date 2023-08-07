@@ -72,4 +72,4 @@ Route::get('/condicional/switch', function () {
     ]);
 });
 
-Route::match(['get', 'post'], '/aniversario', [Aniversario::class, 'index'])->name("aniversario");
+Route::match(['get','post'], '/calcular-idade', [CalcularIdade::class, 'index'])->name("calcular-idade");
