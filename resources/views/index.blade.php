@@ -32,13 +32,26 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+                @php
+                    $itensMenu = [
+                        [
+                            'descricao' => 'Portfolio',
+                            'link' => '#portfolio',
+                        ],
+                        [
+                            'descricao' => 'Sobre',
+                            'link' => '#about',
+                        ],
+                        [
+                            'descricao' => 'Contato',
+                            'link' => '#contact',
+                        ],
+                    ];
+                    
+                @endphp
+
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#contact">Contact</a></li>
+                    @each('parciais._itens_menu', $itensMenu, 'item')
                 </ul>
             </div>
         </div>
@@ -92,8 +105,8 @@
                     <h1>Nenhum projeto encontrado</h1>
                 @endforelse
 
- 
-                @include('site.parciais._paginacao', ['first' => '<<','last' => '>>'])
+
+                @include('site.parciais._paginacao', ['first' => '<<', 'last' => '>>'])
 
 
             </div>
