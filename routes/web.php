@@ -17,7 +17,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'projetos' => [
+            [
+                'imagem' => 'cabin.png'
+            ],
+            [
+                'imagem' => 'cake.png'
+            ],
+            [
+                'imagem' => 'circus.png'
+            ],
+            [
+                'imagem' => 'game.png'
+            ],
+            [
+                'imagem' => 'safe.png'
+            ],
+            [
+                'imagem' => 'submarine.png'
+            ],
+        ]
+    ]);
 });
 
 Route::get('/passagem/dados', function () {
@@ -69,4 +90,4 @@ Route::get('/condicional/switch', function () {
     ]);
 });
 
-Route::match(['get','post'], '/calcular-idade', [CalcularIdade::class, 'index'])->name("calcular-idade");
+Route::match(['get', 'post'], '/calcular-idade', [CalcularIdade::class, 'index'])->name("calcular-idade");
