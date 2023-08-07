@@ -2,7 +2,6 @@
 
 
 use App\Http\Controllers\CalcularIdade;
-use App\Http\Controllers\SiteHerancaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/site/heranca', [SiteHerancaController::class], 'home');
-Route::get('/site/heranca/portifolio', [SiteHerancaController::class], 'portifolio');
-Route::get('/site/heranca/sobre', [SiteHerancaController::class], 'sobre');
-Route::get('/site/heranca/contato', [SiteHerancaController::class], 'contato');
+
 
 Route::get('/', function () {
     return view('index', [
