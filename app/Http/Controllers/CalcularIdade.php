@@ -27,6 +27,6 @@ class CalcularIdade extends Controller
             $idade = $dataAtual->diffInYears($dataNascimento);
         }
 
-        return view('calcular-idade', ['idade' => $idade]);
+        return view('exemplos.calcular-idade', ['idade' => $idade]);
     }
 }
