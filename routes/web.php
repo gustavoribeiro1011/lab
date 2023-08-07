@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Aniversario;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DominioController;
 use App\Http\Controllers\Saudacao;
@@ -60,13 +61,15 @@ Route::get('/php/comentarios', function () {
 });
 
 Route::get('/condicional/if', function () {
-    return view('exemplos.condicional_if',[
+    return view('exemplos.condicional_if', [
         'comentarios' => -1
     ]);
 });
 
 Route::get('/condicional/switch', function () {
-    return view('exemplos.condicional_switch',[
+    return view('exemplos.condicional_switch', [
         'mes' => 13
     ]);
 });
+
+Route::match(['get', 'post'], '/aniversario', [Aniversario::class, 'index'])->name("aniversario");
