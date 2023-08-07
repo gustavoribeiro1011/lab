@@ -1,4 +1,3 @@
-{{ dd($projetos) }}
 <!DOCTYPE html>
 <html lang="en">
 
