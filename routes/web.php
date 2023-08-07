@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\CalcularIdade;
-
+use App\Http\Controllers\SiteHerancaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/site/heranca', [SiteHerancaController::class], 'home');
+Route::get('/site/heranca', [SiteHerancaController::class], 'portifolio');
+Route::get('/site/heranca', [SiteHerancaController::class], 'sobre');
+Route::get('/site/heranca', [SiteHerancaController::class], 'contato');
 
 Route::get('/', function () {
     return view('index', [

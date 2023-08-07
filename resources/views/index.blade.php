@@ -46,8 +46,7 @@
                             'descricao' => 'Contato',
                             'link' => '#contact',
                         ],
-                    ];
-                    
+                    ];                    
                 @endphp
 
                 <ul class="navbar-nav ml-auto">
