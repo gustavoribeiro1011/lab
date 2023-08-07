@@ -6,5 +6,23 @@ use Illuminate\Http\Request;
 
 class SiteHerancaController extends Controller
 {
-    //
+    public function home()
+    {
+        return view('heranca.home');
+    }
+
+    public function portifolio()
+    {
+        return view('heranca.portifolio');
+    }
+
+    public function sobre()
+    {
+        return view('heranca.sobre');
+    }
+
+    public function contato()
+    {
+        return view('heranca.contato');
+    }
 }
