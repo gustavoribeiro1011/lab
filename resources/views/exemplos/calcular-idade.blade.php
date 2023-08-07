@@ -12,19 +12,22 @@
 </head>
 
 <body>
+    <div class="container">
 
-    @if ($idade != null)
-    <p>Idade: {{ $idade }}</p>
-    @endif
+        @if ($idade != null)
+            <p>Idade: {{ $idade }}</p>
+        @endif
 
-    <form action="{{ route('calcular-idade') }}" method="POST">
-        @csrf
-        <div class="mb-3">
-            <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-            <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" placeholder="dd/mm/aaaa">
-        </div>
-        <button type="submit" class="btn btn-success">Calcular Idade</button>
-    </form>
+        <form action="{{ route('calcular-idade') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                <input type="text" class="form-control" id="data_nascimento" name="data_nascimento"
+                    placeholder="dd/mm/aaaa">
+            </div>
+            <button type="submit" class="btn btn-success">Calcular Idade</button>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
