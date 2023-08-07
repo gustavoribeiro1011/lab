@@ -24,7 +24,7 @@ class CalcularIdade extends Controller
             $dataNasc = Carbon::createFromFormat("d/m/Y",$dataNascimento);
 
             //Calcular a diferença de anos entre data de nascimento e data atual
-            $idade = $dataAtual->diffInYears($dataNascimento);
+            $idade = $dataAtual->diffInYears($dataNasc);
         }
 
         return view('exemplos.calcular-idade', ['idade' => $idade]);
