@@ -8,7 +8,7 @@ class SiteHerancaController extends Controller
 {
     public function home()
     {
-        return view('site.heranca.home');        
+        return view('heranca.home');        
     }
 
     public function portifolio()
