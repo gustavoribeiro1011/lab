@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slotn name="titulo">
+    <x-slot name="titulo">
         Página Inicial
     </x-slot>
     <!-- Masthead-->
