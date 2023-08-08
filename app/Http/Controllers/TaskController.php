@@ -23,13 +23,13 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Exibi a tela de cadastro de tarefa
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function create()
     {
-        //
+        return view('task.components.create');
     }
 
     /**
