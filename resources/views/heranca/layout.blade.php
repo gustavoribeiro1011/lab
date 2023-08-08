@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>@yield('titulo-pagina')</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -16,14 +16,14 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand js-scroll-trigger" href="{{ route('site.heranca.home') }}">Start Bootstrap</a>
             <button
                 class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -36,17 +36,17 @@
                     $itensMenu = [
                         [
                             'descricao' => 'Portfolio',
-                            'link' => '#portfolio',
+                            'link' => route('site.heranca.portfolio'),
                         ],
                         [
                             'descricao' => 'Sobre',
-                            'link' => '#about',
+                            'link' => route('site.heranca.sobre'),
                         ],
                         [
                             'descricao' => 'Contato',
-                            'link' => '#contact',
+                            'link' => route('site.heranca.contato'),
                         ],
-                    ];                    
+                    ];
                 @endphp
 
                 <ul class="navbar-nav ml-auto">
@@ -55,63 +55,10 @@
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
-            <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-        </div>
-    </header>
-    <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
 
-                @forelse ($projetos as $projeto)
-                    @continue($projeto['ativo'] === false)
+    <div class="mt-5"></div>
 
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal"
-                            data-target="#portfolioModal{{ $loop->iteration }}">
-                            <div
-                                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i
-                                        class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/{{ $projeto['imagem'] }}" alt="..." />
-                        </div>
-                    </div>
-                @empty
-                    <h1>Nenhum projeto encontrado</h1>
-                @endforelse
-
-
-                @include('site.parciais._paginacao', ['first' => '<<', 'last' => '>>'])
-
-
-            </div>
-        </div>
-    </section>
-
+    @yield('conteudo-principal')
 
     <!-- Footer-->
     <footer class="footer text-center">
@@ -141,11 +88,13 @@
                 <!-- Footer About Text-->
                 <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                    <p class="lead mb-0">
-                        Freelance is a free to use, MIT licensed Bootstrap theme created by
-                        <a href="http://startbootstrap.com">Start Bootstrap</a>
-                        .
-                    </p>
+                  @section('rodape-texto')
+                  <p class="lead mb-0">
+                    Freelance is a free to use, MIT licensed Bootstrap theme created by
+                    <a href="http://startbootstrap.com">Start Bootstrap</a>
+                    .
+                </p>
+                @show
                 </div>
             </div>
         </div>
@@ -415,10 +364,10 @@
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
+    <script src="/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="/assets/mail/contact_me.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 
 </html>

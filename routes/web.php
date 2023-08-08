@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\CalcularIdade;
 use App\Http\Controllers\SiteHerancaController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/site/heranca', [SiteHerancaController::class, 'home']);
-Route::get('/site/heranca/portifolio', [SiteHerancaController::class], 'portifolio');
-Route::get('/site/heranca/sobre', [SiteHerancaController::class], 'sobre');
-Route::get('/site/heranca/contato', [SiteHerancaController::class], 'contato');
+Route::get('/site/heranca', [SiteHerancaController::class, 'home'])->name('site.heranca.home');
+Route::get('/site/heranca/portfolio', [SiteHerancaController::class, 'portfolio'])->name('site.heranca.portfolio');
+Route::get('/site/heranca/sobre', [SiteHerancaController::class, 'sobre'])->name('site.heranca.sobre');
+Route::get('/site/heranca/contato', [SiteHerancaController::class, 'contato'])->name('site.heranca.contato');
 
 
 
@@ -105,3 +106,5 @@ Route::get('/condicional/switch', function () {
 });
 
 Route::match(['get', 'post'], '/calcular-idade', [CalcularIdade::class, 'index'])->name("calcular-idade");
+
+Route::resource('task', TaskController::class);

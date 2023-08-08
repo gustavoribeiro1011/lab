@@ -11,9 +11,37 @@ class SiteHerancaController extends Controller
         return view('heranca.home');        
     }
 
-    public function portifolio()
+    public function portfolio()
     {
-        return view('heranca.portifolio');
+        return view('heranca.portfolio', [
+            'paginacao' => true,
+            'projetos' => [
+                [
+                    'ativo' => true,
+                    'imagem' => 'cabin.png'
+                ],
+                [
+                    'ativo' => true,
+                    'imagem' => 'cake.png'
+                ],
+                [
+                    'ativo' => true,
+                    'imagem' => 'circus.png'
+                ],
+                [
+                    'ativo' => false,
+                    'imagem' => 'game.png'
+                ],
+                [
+                    'ativo' => true,
+                    'imagem' => 'safe.png'
+                ],
+                [
+                    'ativo' => true,
+                    'imagem' => 'submarine.png'
+                ],
+            ]
+        ]);
     }
 
     public function sobre()
