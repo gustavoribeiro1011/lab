@@ -15,17 +15,22 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Tarefas
                     </a>
-                    @php                        
+                    @php
                         $itensMenu = [
                             [
                                 'descricao' => 'Nova tarefa',
                                 'link' => route('task.create'),
                             ],
+                            [
+                                'descricao' => 'Ver todas',
+                                'link' => route('task.index'),
+                            ],
                         ];
                     @endphp
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Nova tarefa</a></li>
-                        <li><a class="dropdown-item" href="#">Ver todas</a></li>
+                        @foreach ($itensMenu as $item)
+                            <li><a class="dropdown-item" href="{{ $item['link']}}">{{ $item['descricao'] }}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 
