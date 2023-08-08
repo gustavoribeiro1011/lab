@@ -1,6 +1,7 @@
 @extends('task.heranca.layout')
 
-@section('titulo-pagina', 'Home - Sistema Task')
+@section('titulo-pagina', 'Home')
+
 @section('titulo-secao', 'Nova tarefa')
 
 @section('conteudo-principal')
