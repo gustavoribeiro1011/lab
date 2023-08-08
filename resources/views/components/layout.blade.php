@@ -32,14 +32,22 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#contact">Contact</a></li>
-                </ul>
+                @php
+                    $itensMenu = [
+                        [
+                            'descricao' => 'Portfolio',
+                            'link' => route('site.componente.portfolio'),
+                        ],
+                        [
+                            'descricao' => 'Sobre',
+                            'link' => route('site.componente.sobre'),
+                        ],
+                        [
+                            'descricao' => 'Contato',
+                            'link' => route('site.componente.contato'),
+                        ],
+                    ];
+                @endphp
             </div>
         </div>
     </nav>
