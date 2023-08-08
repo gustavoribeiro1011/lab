@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @include('task.components.navbar')
+    @include('task.components._navbar')
     <div class="container mt-3">
         <h3> @yield('titulo-secao') </h3>
         @yield('conteudo-principal')

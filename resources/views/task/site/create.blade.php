@@ -1,4 +1,4 @@
-@extends('task.heranca.layout')
+@extends('task.site.layout')
 
 @section('titulo-pagina', 'Nova tarefa')
 
@@ -6,6 +6,6 @@
 
 @section('conteudo-principal')
 
-    @include('task.components.create')
+    @include('task.components._create')
     
 @endsection

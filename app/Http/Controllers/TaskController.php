@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -17,7 +18,7 @@ class TaskController extends Controller
     {
 
         $tasks = Task::get();
-        return view('task.heranca.home', [
+        return view('task.site.home', [
             'tasks' => $tasks
         ]);
     }
@@ -27,9 +28,9 @@ class TaskController extends Controller
      *
      * @return void
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('task.heranca.create');
+        return view('task.site.create');
     }
 
     /**
@@ -81,14 +82,18 @@ class TaskController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+/**
+ * Apaga uma tarefa no BD
+ *
+ * @param integer $id
+ * @return void
+ */
+    public function destroy(int $id): RedirectResponse
     {
-        //
+        $task = Task::find($id);
+
+        $task->delete();
+
+        return redirect('/task');
     }
 }
