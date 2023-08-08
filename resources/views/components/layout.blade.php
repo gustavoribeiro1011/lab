@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>{{ $titulo}}</title>
+    <title>{{ $titulo }}</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -48,6 +48,9 @@
                         ],
                     ];
                 @endphp
+                <ul class="navbar-nav ml-auto">
+                    @each('parciais._itens_menu', $itensMenu, 'item')
+                </ul>
             </div>
         </div>
     </nav>
