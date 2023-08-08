@@ -17,8 +17,18 @@
                         Tarefas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('task.create') }}">Nova tarefa</a></li>
-                        <li><a class="dropdown-item" href="#">Ver todas</a></li>                        
+                        @php
+                            $itensMenu = [
+                                [
+                                    'descricao' => 'Nova tarefa',
+                                    'link' => route('task.site.create'),
+                                ],
+                            ];
+                        @endphp
+
+                        <li><a class="dropdown-item" href="#">Nova tarefa</a></li>
+
+                        <li><a class="dropdown-item" href="#">Ver todas</a></li>
                     </ul>
                 </li>
             </div>
