@@ -335,7 +335,7 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Around the Web</h4>
 
-                    <x-item-social link=facebook">
+                    <x-item-social link="facebook">
                         <i class="fab fa-fw fa-facebook-f"></i>
                     </x-item-social>
 
