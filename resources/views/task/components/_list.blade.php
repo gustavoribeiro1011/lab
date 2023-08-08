@@ -16,7 +16,12 @@
                 <td>{{ $task['description'] }}</td>
                 <td>Pendente</td>
                 <td>
-                    <a href="{{ route('task.destroy') }}" class="btn btn-danger">Remover</a>
+                    <form action="{{ route('task.destroy', $task) }}" method="POST" style="display:inline">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
