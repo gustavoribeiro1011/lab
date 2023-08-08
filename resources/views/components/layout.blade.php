@@ -44,6 +44,8 @@
         </div>
     </nav>
 
+    <div class="mt-5"></div>
+
     {{ $slot }}
 
     <!-- Footer-->
