@@ -21,7 +21,7 @@
                             $itensMenu = [
                                 [
                                     'descricao' => 'Nova tarefa',
-                                    'link' => route('task.site.create'),
+                                    'link' => route('task.create'),
                                 ],
                             ];
                         @endphp
