@@ -6,14 +6,19 @@ use Illuminate\View\Component;
 
 class ItemProjeto extends Component
 {
+    public string $imagem;
+
+    public int $indice;
+    
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $imagem, int $indice)
     {
-        //
+        $this->imagem = $imagem;
+        $this->indice = $indice;
     }
 
     /**
