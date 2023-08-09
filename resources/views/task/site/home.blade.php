@@ -1,13 +1,10 @@
-@extends('task.site.layout')
+<x-task.layout>
 
-@section('titulo-pagina', 'Home')
+    <x-slot name="titulo">Página Inicial</x-slot>
 
-@section('titulo-secao', 'Nova tarefa')
+    <x-slot name="titulo_secao">Nova tarefa</x-slot>
 
-@section('conteudo-principal')
+    <x-task.create />
+    <x-task.read />
 
-    @include('task.components._create')
-
-    @include('task.components._list')
-
-@endsection
+</x-task.layout>

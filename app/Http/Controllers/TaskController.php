@@ -16,11 +16,7 @@ class TaskController extends Controller
      */
     public function index(): View
     {
-
-        $tasks = Task::get();
-        return view('task.site.home', [
-            'tasks' => $tasks
-        ]);
+        return view('task.site.home');
     }
 
     /**
@@ -49,45 +45,56 @@ class TaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostra uma tarefa específica
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param integer $id
+     * @return View
      */
-    public function show($id)
+    public function show(int $id): View
     {
-        //
+        $task = Task::find($id);
+
+        return view('task.site.edit', [
+            'task' => $task
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Mostra o formulário para edição
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param [type] $id
+     * @return void
      */
-    public function edit($id)
+    public function edit(): View
     {
-        //
+        return view('task.site.edit');
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiza a tarefa no banco de dados
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param integer $id
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(int $id, Request $request): RedirectResponse
     {
-        //
+        $task = Task::find($id);
+
+        $task->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/task');
     }
 
-/**
- * Apaga uma tarefa no BD
- *
- * @param integer $id
- * @return void
- */
+    /**
+     * Apaga uma tarefa no BD
+     *
+     * @param integer $id
+     * @return void
+     */
     public function destroy(int $id): RedirectResponse
     {
         $task = Task::find($id);

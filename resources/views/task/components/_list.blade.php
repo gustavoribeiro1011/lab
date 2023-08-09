@@ -16,6 +16,8 @@
                 <td>{{ $task['description'] }}</td>
                 <td>Pendente</td>
                 <td>
+                    <a href="{{ route('task.show', $task) }}"class="btn btn-warning">Editar</a>
+
                     <form action="{{ route('task.destroy', $task) }}" method="POST" style="display:inline">
                         @method('DELETE')
                         @csrf

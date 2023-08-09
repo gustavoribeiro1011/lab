@@ -17,6 +17,7 @@
             </div>
             <!-- Masthead Subheading-->
             <p class="masthead-subheading font-weight-light mb-0">@lang('home.cargos')</p>
+            {{-- <p class="masthead-subheading font-weight-light mb-0">{{ __('home.cargos') }}</p> --}}
         </div>
     </header>
 </x-layout>

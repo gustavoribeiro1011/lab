@@ -23,6 +23,7 @@ Route::get('/site/heranca/portfolio', [SiteHerancaController::class, 'portfolio'
 Route::get('/site/heranca/sobre', [SiteHerancaController::class, 'sobre'])->name('site.heranca.sobre');
 Route::get('/site/heranca/contato', [SiteHerancaController::class, 'contato'])->name('site.heranca.contato');
 
+Route::get('/site/componente/home/{idioma?}', [SiteComponenteController::class, 'home'])->name('site.componente.home');
 Route::get('/site/componente', [SiteComponenteController::class, 'home'])->name('site.componente.home');
 Route::get('/site/componente/portfolio', [SiteComponenteController::class, 'portfolio'])->name('site.componente.portfolio');
 Route::get('/site/componente/sobre', [SiteComponenteController::class, 'sobre'])->name('site.componente.sobre');
@@ -112,4 +113,7 @@ Route::get('/condicional/switch', function () {
 
 Route::match(['get', 'post'], '/calcular-idade', [CalcularIdade::class, 'index'])->name("calcular-idade");
 
+
+
+// Route::get('/task/{id}/edit', [ClientController::class, 'edit'])->name('clients.edit');
 Route::resource('task', TaskController::class);
