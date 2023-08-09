@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',100);
+            $table->char('cpf',11);
+            $table->date('data_contratacao');
+            $table->date('data_demissao')->nullable();
             $table->timestamps();
         });
     }
