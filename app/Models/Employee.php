@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-=======
 
     /**
      * Defino o que vai ser permitido
@@ -27,6 +25,4 @@ class Employee extends Model
      * Permite tudo
      */
     // protected $guarded = [];
-
->>>>>>> 5a1501f4f3b1b4866a25a7af74557e4e94bc1267
 }
