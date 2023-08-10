@@ -29,4 +29,13 @@ class Funcionario extends Model
     const CREATED_AT = 'data_criacao';
     const UPDATED_AT = 'data_atualizacao';
 
+    /**
+     * Mapeamos o relacionamento com endereço
+     *
+     * @return void
+     */
+    function endereco()
+    {
+        return $this->hasOne(Endereco::class, 'codigo_fun', 'cod');
+    }
 }
