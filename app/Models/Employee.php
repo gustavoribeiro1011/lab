@@ -14,7 +14,7 @@ class Employee extends Model
      *
      * @var array
      */
-    protected $fillable = ['nome', 'cpf', 'data_contratacao','data_demissao'];
+    protected $fillable = ['nome', 'cpf', 'data_contratacao', 'data_demissao'];
 
     /**
      * Defino o que não vai ser permitido
@@ -25,4 +25,14 @@ class Employee extends Model
      * Permite tudo
      */
     // protected $guarded = [];
+
+    /**
+     * Defini a relação com endereço
+     *
+     * @return void
+     */
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
 }
