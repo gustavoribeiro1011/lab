@@ -15,6 +15,18 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+
+            $table->string('logradouro');
+            $table->string('numero', 20);
+            $table->string('bairro', 50);
+            $table->string('cidade',50);
+            $table->string('complemento',50)->nullable();
+            $table->char('cep',8); 
+            $table->char('estado',2);     
+            
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
+
             $table->timestamps();
         });
     }
