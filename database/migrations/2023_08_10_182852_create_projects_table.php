@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
+            $table->string('nome', 100);
+            $table->decimal('orcamento');
+            $table->date('data_inicio');
+            $table->date('data_final');
+
+            //Chaves estrangeiras
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
+
             $table->timestamps();
         });
     }
