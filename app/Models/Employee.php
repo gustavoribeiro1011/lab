@@ -35,4 +35,24 @@ class Employee extends Model
     {
         return $this->hasOne(Address::class);
     }
+    /**
+     * Define a relação com projetos
+     *
+     * @return void
+     */
+    function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
+
+    /**
+     * Define a relação com projetos (quando não segue a convenção do laravel)
+     *
+     * @return void
+     *
+     *function projects() {
+     *    return $this->belongsToMany(Project::class, 'employee_project','employee_id','project
+     * _id');
+     *}
+     */
 }

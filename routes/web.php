@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\CalcularIdade;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SiteHerancaController;
 use App\Http\Controllers\SiteComponenteController;
 use App\Http\Controllers\TaskController;
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/projects/{project}',[ProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects',[ProjectController::class, 'index'])->name('projects.index');
 
 Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
 Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');

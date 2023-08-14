@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -13,7 +14,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::with('client')->get();
+
+        return view('projects.index', [
+            'projects' => $projects
+        ]);
     }
 
     /**
@@ -40,12 +45,17 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+
+        $project->load(['client', 'employees']);
+
+        return view('projects.show', [
+            'project' => $project
+        ]);
     }
 
     /**
